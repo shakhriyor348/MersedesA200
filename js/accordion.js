@@ -4,29 +4,21 @@ const btn = document.querySelectorAll('.feature__link'),
 
 
 btn.forEach((item, i) => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', () => {
         btn.forEach((item) => {
-            item.classList.remove('feature__link_active')
+            if(item.classList.contains('feature__link_active')) {
+                item.classList.remove('feature__link_active')
+            }else {
+                item.classList.add('feature__link_active')
+            }
         })
 
-
-        console.log(e.target);
-
-
-        if(e.target && item.classList.contains('feature__link')){
-            item.classList.remove('feature__link_active')
-            console.log('asd');
+        if(item.classList.contains('feature__link_active')) {
+            lists[i].classList.remove('hidden')
         }else {
-
-            item.classList.add('feature__link_active')
+            lists[i].classList.add('hidden')
         }
-
-      
-
-        lists.forEach(list => {
-            list.classList.add('hidden')
-        })
-
-        lists[i].classList.remove('hidden')
     })
 })
+
+
