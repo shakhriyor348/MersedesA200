@@ -14,7 +14,7 @@ for (let btn of tabsHandlerEl) {
             }
         })
         title.forEach(title => {
-            if (content.dataset.tabsField === btn.dataset.tabsHandler) {
+            if (title.dataset.tabsField == btn.dataset.tabsHandler) {
                 title.classList.remove('hidden')
             } else {
                 title.classList.add('hidden')
